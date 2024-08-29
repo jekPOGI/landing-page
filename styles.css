@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #161b22;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: #58a6ff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #c9d1d9;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.nav-links li a:hover {
+    color: #58a6ff;
+}
+
+.auth-buttons button {
+    background-color: #238636;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-buttons button:hover {
+    background-color: #2ea043;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('technology-background.jpg'); /* Replace with your image filename */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 60px; /* to offset the fixed nav */
+    overflow: hidden; /* Ensures the animation stays within the bounds */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 2; /* Ensures the content is above the animated elements */
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(720deg); /* Extends the movement vertically across the entire viewport height */
+        opacity: 0;
+    }
+}
+
+.bubble {
+    position: absolute;
+    bottom: -150px;
+    background-color: rgba(88, 166, 255, 0.3);
+    border-radius: 50%;
+    animation: move 15s infinite linear; /* Slowed down for a more ambient effect */
+    z-index: 0;
+}
+
+.bubble:nth-child(1) {
+    left: 10%;
+    width: 60px;
+    height: 60px;
+    animation-duration: 20s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(2) {
+    left: 20%;
+    width: 40px;
+    height: 40px;
+    animation-duration: 18s;
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(3) {
+    left: 30%;
+    width: 80px;
+    height: 80px;
+    animation-duration: 22s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(4) {
+    left: 40%;
+    width: 50px;
+    height: 50px;
+    animation-duration: 24s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(5) {
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    animation-duration: 26s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(6) {
+    left: 60%;
+    width: 30px;
+    height: 30px;
+    animation-duration: 28s;
+    animation-delay: 5s;
+}
+
+.bubble:nth-child(7) {
+    left: 70%;
+    width: 90px;
+    height: 90px;
+    animation-duration: 30s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(8) {
+    left: 80%;
+    width: 20px;
+    height: 20px;
+    animation-duration: 32s;
+    animation-delay: 2s;
+}
+
+
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-content button {
+    background-color: #58a6ff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero-content button:hover {
+    background-color: #1f6feb;
+}
+
+.about {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #161b22;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #58a6ff;
+}
+
+.about-content p {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.key-points {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.point {
+    background-color: #0d1117;
+    padding: 20px;
+    border-radius: 8px;
+    width: 280px; /* Adjusted width to accommodate image and text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.point img {
+    width: 100%; /* Ensures the image fits within the point container */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.point:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.point h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #58a6ff;
+}
+
+.point p {
+    font-size: 1rem;
+    color: #c9d1d9;
+}
+
+footer {
+    background-color: #161b22;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer p {
+    color: #c9d1d9;
+}
